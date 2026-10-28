@@ -1,12 +1,11 @@
+
 /*
-  SETUP:
-  1. Create a Supabase project.
-  2. Replace the placeholders below with Project URL and anon/public key.
-  3. Never put the service_role key or any secret in this file.
+  Tutorial Video Website Configuration
+  Never put a service_role key or secret key here.
 */
 window.APP_CONFIG = {
-  SUPABASE_URL: "https://YOUR_PROJECT_ID.supabase.co",
-  SUPABASE_ANON_KEY: "YOUR_SUPABASE_ANON_KEY",
+  SUPABASE_URL: "https://acrsfmuagwizhmwdqxln.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_623aVKrHd904hrN0q4E_Nw_yvqK7nqp",
   VIDEO_BUCKET: "tutorial-videos",
   MAX_VIDEO_SIZE_MB: 200
 };
