@@ -10,9 +10,8 @@
   const notify = (msg) => { const node = document.createElement("div"); node.className="toast"; node.textContent=msg; document.body.appendChild(node); setTimeout(()=>node.remove(),2600); };
 
   function showName() {
-    const saved = localStorage.getItem(localNameKey);
-    if (saved) $("visitor-greeting").textContent = `স্বাগতম, ${saved}`;
-    else $("name-dialog").showModal();
+    $("visitor-greeting").textContent = "";
+  }
   }
   $("name-form").addEventListener("submit", e => {
     e.preventDefault();
