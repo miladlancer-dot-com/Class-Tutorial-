@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="প্রতিষ্ঠানের টিউটোরিয়াল ভিডিও দেখুন।">
+  <title>Tutorial Video Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Home"><span class="brand-mark">▶</span><span id="site-name">Tutorial Video</span></a>
+    <div class="top-actions"><span id="visitor-greeting" class="muted"></span><a class="button button-quiet" href="admin.html">Admin</a></div>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">WATCH · LEARN · GROW</p>
+      <h1 id="site-title">শিখুন নিজের গতিতে</h1>
+      <p id="site-description" class="muted">আপনার প্রতিষ্ঠানের টিউটোরিয়াল ভিডিও এক জায়গায়। ভিডিও দেখতে অ্যাকাউন্ট লাগবে না।</p>
+    </section>
+    <section class="feed-heading">
+      <div><h2>টিউটোরিয়াল ভিডিও</h2><p class="muted">স্ক্রল করে ভিডিও দেখুন</p></div>
+      <span id="video-total" class="pill">ভিডিও লোড হচ্ছে…</span>
+    </section>
+    <section id="video-feed" class="feed" aria-live="polite">
+      <div class="empty-state">ভিডিও লোড হচ্ছে…</div>
+    </section>
+  </main>
+  <footer><span id="footer-name">Tutorial Video</span> · Tutorial Video Platform</footer>
+
+  <dialog id="name-dialog" class="dialog">
+    <form id="name-form" method="dialog">
+      <div class="dialog-icon">👋</div>
+      <h2>স্বাগতম!</h2>
+      <p class="muted">শুরু করতে একবার আপনার নাম লিখুন। একই ব্রাউজারে পরেরবার নাম মনে থাকবে।</p>
+      <label for="visitor-name">আপনার নাম</label>
+      <input id="visitor-name" name="visitorName" maxlength="60" autocomplete="name" required placeholder="যেমন: Mubin">
+      <button class="button button-primary full-width" type="submit">ভিডিও দেখা শুরু করুন</button>
+      <p class="fine-print">এটি কোনো অ্যাকাউন্ট নয়। নামটি শুধু এই ব্রাউজারে সংরক্ষিত থাকবে।</p>
+    </form>
+  </dialog>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="brand-mark">▶</span><span>Admin Dashboard</span></a>
+    <a class="button button-quiet" href="./">Public Website</a>
+  </header>
+  <main class="container admin-container">
+    <section id="login-section" class="panel login-panel">
+      <p class="eyebrow">PRIVATE AREA</p>
+      <h1>Admin Login</h1>
+      <p class="muted">শুধু অনুমোদিত অ্যাডমিন লগইন করতে পারবেন।</p>
+      <form id="login-form">
+        <label for="admin-email">Admin email</label>
+        <input id="admin-email" type="email" autocomplete="username" required placeholder="আপনার নির্ধারিত admin email">
+        <label for="admin-password">Password</label>
+        <input id="admin-password" type="password" autocomplete="current-password" required placeholder="Admin password">
+        <button class="button button-primary full-width" type="submit">Login</button>
+      </form>
+      <p id="login-message" class="status-message" role="status"></p>
+      <p class="fine-print">নিরাপত্তার জন্য পাসওয়ার্ড HTML ফাইলে রাখা হয় না। Supabase Auth-এ অ্যাডমিন অ্যাকাউন্ট তৈরি করতে হবে।</p>
+    </section>
+
+    <section id="dashboard" class="hidden">
+      <div class="dashboard-heading"><div><p class="eyebrow">CONTENT MANAGEMENT</p><h1>আপনার ওয়েবসাইট পরিচালনা করুন</h1></div><button id="logout-button" class="button button-quiet">Logout</button></div>
+      <div id="dashboard-message" class="status-message" role="status"></div>
+      <section class="panel">
+        <h2>ওয়েবসাইটের নাম ও লেখা</h2>
+        <form id="settings-form" class="form-grid">
+          <div><label for="setting-name">Website name</label><input id="setting-name" required maxlength="100"></div>
+          <div><label for="setting-title">Main heading</label><input id="setting-title" required maxlength="160"></div>
+          <div class="span-2"><label for="setting-description">Description</label><textarea id="setting-description" rows="3" maxlength="1000"></textarea></div>
+          <div class="span-2"><button class="button button-primary" type="submit">সেটিংস সংরক্ষণ</button></div>
+        </form>
+      </section>
+      <section class="panel">
+        <h2 id="video-form-heading">নতুন ভিডিও আপলোড</h2>
+        <form id="video-form" class="form-grid">
+          <input id="edit-video-id" type="hidden">
+          <div><label for="video-title">ভিডিওর শিরোনাম</label><input id="video-title" required maxlength="180"></div>
+          <div><label for="video-file">ভিডিও ফাইল (MP4/WebM)</label><input id="video-file" type="file" accept="video/mp4,video/webm,video/quicktime"></div>
+          <div class="span-2"><label for="video-description">বিবরণ</label><textarea id="video-description" rows="3" maxlength="3000"></textarea></div>
+          <div class="span-2"><label for="video-thumbnail">Thumbnail URL (ঐচ্ছিক)</label><input id="video-thumbnail" type="url" placeholder="https://..."></div>
+          <div class="span-2 form-actions"><button class="button button-primary" type="submit">ভিডিও সংরক্ষণ / আপলোড</button><button id="cancel-edit" class="button button-quiet hidden" type="button">Edit বাতিল</button></div>
+          <p class="fine-print span-2">বড় ভিডিওর জন্য স্টোরেজ প্ল্যান ও আপলোড সীমা যাচাই করুন। আপলোড করা ভিডিও সবার জন্য পাবলিক হবে।</p>
+        </form>
+      </section>
+      <section class="panel">
+        <div class="feed-heading"><div><h2>আপলোড করা ভিডিও</h2><p class="muted">এখান থেকে ভিডিও এডিট বা ডিলিট করুন।</p></div><span id="admin-video-total" class="pill">0</span></div>
+        <div id="admin-video-list" class="admin-video-list"></div>
+      </section>
+    </section>
+  </main>
+  <footer>Admin Portal · Tutorial Video Platform</footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
